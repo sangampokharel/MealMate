@@ -6,14 +6,65 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		3D1577442EAF53A700E9ABA3 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D1577432EAF53A700E9ABA3 /* WidgetKit.framework */; };
+		3D1577462EAF53A700E9ABA3 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D1577452EAF53A700E9ABA3 /* SwiftUI.framework */; };
+		3D1577512EAF53A800E9ABA3 /* MealMateWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 3D1577412EAF53A700E9ABA3 /* MealMateWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3D15774F2EAF53A800E9ABA3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3D1577272EAF537200E9ABA3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3D1577402EAF53A700E9ABA3;
+			remoteInfo = MealMateWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3D1577562EAF53A800E9ABA3 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				3D1577512EAF53A800E9ABA3 /* MealMateWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		3D15772F2EAF537200E9ABA3 /* MealMate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MealMate.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D1577412EAF53A700E9ABA3 /* MealMateWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MealMateWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D1577432EAF53A700E9ABA3 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		3D1577452EAF53A700E9ABA3 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		3D1577522EAF53A800E9ABA3 /* Exceptions for "MealMateWidget" folder in "MealMateWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 3D1577402EAF53A700E9ABA3 /* MealMateWidgetExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		3D1577312EAF537200E9ABA3 /* MealMate */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = MealMate;
+			sourceTree = "<group>";
+		};
+		3D1577472EAF53A700E9ABA3 /* MealMateWidget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				3D1577522EAF53A800E9ABA3 /* Exceptions for "MealMateWidget" folder in "MealMateWidgetExtension" target */,
+			);
+			path = MealMateWidget;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -26,6 +77,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3D15773E2EAF53A700E9ABA3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D1577462EAF53A700E9ABA3 /* SwiftUI.framework in Frameworks */,
+				3D1577442EAF53A700E9ABA3 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -33,6 +93,8 @@
 			isa = PBXGroup;
 			children = (
 				3D1577312EAF537200E9ABA3 /* MealMate */,
+				3D1577472EAF53A700E9ABA3 /* MealMateWidget */,
+				3D1577422EAF53A700E9ABA3 /* Frameworks */,
 				3D1577302EAF537200E9ABA3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,8 +103,18 @@
 			isa = PBXGroup;
 			children = (
 				3D15772F2EAF537200E9ABA3 /* MealMate.app */,
+				3D1577412EAF53A700E9ABA3 /* MealMateWidgetExtension.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		3D1577422EAF53A700E9ABA3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3D1577432EAF53A700E9ABA3 /* WidgetKit.framework */,
+				3D1577452EAF53A700E9ABA3 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -55,10 +127,12 @@
 				3D15772B2EAF537200E9ABA3 /* Sources */,
 				3D15772C2EAF537200E9ABA3 /* Frameworks */,
 				3D15772D2EAF537200E9ABA3 /* Resources */,
+				3D1577562EAF53A800E9ABA3 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				3D1577502EAF53A800E9ABA3 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				3D1577312EAF537200E9ABA3 /* MealMate */,
@@ -69,6 +143,28 @@
 			productName = MealMate;
 			productReference = 3D15772F2EAF537200E9ABA3 /* MealMate.app */;
 			productType = "com.apple.product-type.application";
+		};
+		3D1577402EAF53A700E9ABA3 /* MealMateWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3D1577532EAF53A800E9ABA3 /* Build configuration list for PBXNativeTarget "MealMateWidgetExtension" */;
+			buildPhases = (
+				3D15773D2EAF53A700E9ABA3 /* Sources */,
+				3D15773E2EAF53A700E9ABA3 /* Frameworks */,
+				3D15773F2EAF53A700E9ABA3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				3D1577472EAF53A700E9ABA3 /* MealMateWidget */,
+			);
+			name = MealMateWidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = MealMateWidgetExtension;
+			productReference = 3D1577412EAF53A700E9ABA3 /* MealMateWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -81,6 +177,9 @@
 				LastUpgradeCheck = 2600;
 				TargetAttributes = {
 					3D15772E2EAF537200E9ABA3 = {
+						CreatedOnToolsVersion = 26.0.1;
+					};
+					3D1577402EAF53A700E9ABA3 = {
 						CreatedOnToolsVersion = 26.0.1;
 					};
 				};
@@ -100,12 +199,20 @@
 			projectRoot = "";
 			targets = (
 				3D15772E2EAF537200E9ABA3 /* MealMate */,
+				3D1577402EAF53A700E9ABA3 /* MealMateWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		3D15772D2EAF537200E9ABA3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D15773F2EAF53A700E9ABA3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -122,7 +229,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3D15773D2EAF53A700E9ABA3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3D1577502EAF53A800E9ABA3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3D1577402EAF53A700E9ABA3 /* MealMateWidgetExtension */;
+			targetProxy = 3D15774F2EAF53A800E9ABA3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		3D1577382EAF537300E9ABA3 /* Debug */ = {
@@ -261,6 +383,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -293,6 +416,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -303,6 +427,68 @@
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3D1577542EAF53A800E9ABA3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 974PYRN6CZ;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MealMateWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MealMateWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sangam.MealMate.MealMateWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3D1577552EAF53A800E9ABA3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 974PYRN6CZ;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MealMateWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MealMateWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sangam.MealMate.MealMateWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
@@ -327,6 +513,15 @@
 			buildConfigurations = (
 				3D15773B2EAF537300E9ABA3 /* Debug */,
 				3D15773C2EAF537300E9ABA3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3D1577532EAF53A800E9ABA3 /* Build configuration list for PBXNativeTarget "MealMateWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D1577542EAF53A800E9ABA3 /* Debug */,
+				3D1577552EAF53A800E9ABA3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

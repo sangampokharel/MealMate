@@ -12,6 +12,10 @@ struct MealMateApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .onOpenURL { url in
+                    let data = url.absoluteString
+                    print("data: \(data)")
+                }
         }
     }
 }
