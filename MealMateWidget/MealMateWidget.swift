@@ -19,7 +19,7 @@ struct Provider: TimelineProvider {
     }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        let entries:[SimpleEntry] = []
+        let entries:[SimpleEntry] = [SimpleEntry(date: .now)]
         let timeline = Timeline(entries: entries, policy: .atEnd)
         completion(timeline)
     }
@@ -34,31 +34,61 @@ struct SimpleEntry: TimelineEntry {
 }
 
 struct MealMateWidgetEntryView : View {
-    var entry: Provider.Entry
+    @Environment(\.widgetFamily) private var family
+    var entry: SimpleEntry
 
     var body: some View {
         VStack {
-            HStack {
-                Image(systemName: "fork.knife.circle.fill")
-                    .widgetAccentable()
-                Spacer()
-                Image(systemName: "magnifyingglass")
-                    .widgetAccentable()
+            
+            Link(destination: URL(string: "search")!) {
+                HStack {
+                    Image(systemName: "fork.knife.circle.fill")
+                        .widgetAccentable()
+                    Spacer()
+                    Image(systemName: "magnifyingglass")
+                        .widgetAccentable()
+                }
+                .padding(.horizontal,12)
+                .padding(.vertical,12)
+                .background(Color(UIColor.systemGray6))
+                .clipShape(Capsule())
             }
-            .padding(.horizontal,12)
-            .padding(.vertical,12)
-            .background(Color(UIColor.systemGray6))
-            .clipShape(Capsule())
             
             Spacer()
             
-            Text("Search MealMate")
-                .frame(maxWidth: .infinity,alignment: .leading)
-                .font(.title3.bold())
-                .widgetAccentable()
+            switch family {
+            case .systemSmall:
+                   Text("Search MealMate")
+                        .frame(maxWidth: .infinity,alignment: .leading)
+                        .font(.title3.bold())
+                        .widgetAccentable()
+                
+            case .systemMedium:
+                HStack {
+                    Link(destination: URL(string: "restaurants")!) {
+                        MealMateMediumCategoryView(image: "fork.knife", title: "Restaurant")
+                    }
+                    Spacer()
+                    Link(destination: URL(string: "mart")!) {
+                        MealMateMediumCategoryView(image: "birthday.cake.fill", title: "mart")
+                    }
+                    Spacer()
+                    Link(destination: URL(string: "baskets")!) {
+                        MealMateMediumCategoryView(image: "cart", title: "Basket")
+                    }
+                        
+                }
+           
+            case .systemLarge,.systemExtraLarge,.systemExtraLargePortrait,.accessoryCorner, .accessoryRectangular,.accessoryInline,.accessoryCircular::
+                EmptyView()
+            default:
+                EmptyView()
+            }
+            
+            
         }
         .containerBackground(for: .widget) { }
-        .widgetURL(URL(string: "coke"))
+//        .widgetURL(URL(string: "coke"))
     }
 }
 
@@ -77,13 +107,30 @@ struct MealMateWidget: Widget {
         }
         .configurationDisplayName("Search MealMate")
         .description("Search for momo,chowmin and coke.")
-        .supportedFamilies([.systemSmall])
+        .supportedFamilies([.systemSmall, .systemMedium, .accessoryCircular])
     }
 }
 
-#Preview(as: .systemSmall) {
+#Preview(as: .systemMedium) {
     MealMateWidget()
 } timeline: {
     SimpleEntry(date: .now)
     SimpleEntry(date: .now)
+}
+
+struct MealMateMediumCategoryView:View {
+    let image:String
+    let title:String
+    var body: some View {
+        VStack(spacing:6) {
+            Image(systemName: image)
+               
+            Text(title)
+                .font(.caption)
+              
+        }
+        .widgetAccentable()
+        .frame(maxWidth: .infinity,maxHeight: .infinity)
+        .background(RoundedRectangle(cornerRadius: 12).fill(Color(UIColor.systemGray6)))
+    }
 }
