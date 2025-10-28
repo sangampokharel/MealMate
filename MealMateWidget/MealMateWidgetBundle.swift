@@ -13,7 +13,10 @@ struct MealMateWidgetBundle: WidgetBundle {
     var body: some Widget {
         MealMateWidget()
         if #available(iOS 18.0, *) {
-            MealMateControlWidget()
+            CartControlWidget()
+            MartControlWidget()
+            RestaurantControlWidget()
+            SearchControlWidget()
         }
     }
 }

@@ -62,7 +62,7 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				AppIntents.swift,
-				MealMateControlWidget.swift,
+				CartControlWidget.swift,
 			);
 			target = 3D15772E2EAF537200E9ABA3 /* MealMate */;
 		};
