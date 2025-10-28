@@ -2,6 +2,8 @@
 
 MealMate is an iOS application that combines food delivery and grocery shopping in one convenient platform. The app features restaurant ordering, mart shopping, and basket management with custom iOS 18 widgets for quick access to key features.
 
+This project is done to learn about widgets, control widgets and deeplinking into application
+
 ## Features
 
 - **Restaurant Ordering**: Browse restaurants, view menus, and order food
@@ -17,6 +19,6 @@ MealMate is an iOS application that combines food delivery and grocery shopping 
 - Xcode 16.0+
 - Swift 5.9+
 
-## Installation
+
 
   
