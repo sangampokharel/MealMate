@@ -8,58 +8,33 @@
 import SwiftUI
 
 struct MainView: View {
+    @Binding var selection: Int
     
-    @Binding var selection:Int
+    private struct TabConfiguration {
+        let title: String
+        let systemImage: String
+        let tag: Int
+        let view: AnyView
+    }
+    
+    private let tabs: [TabConfiguration] = [
+        TabConfiguration(title: "Home", systemImage: "house", tag: 0, view: AnyView(HomeView())),
+        TabConfiguration(title: "Mart", systemImage: "carrot.fill", tag: 1, view: AnyView(MartView())),
+        TabConfiguration(title: "Basket", systemImage: "cart", tag: 2, view: AnyView(BasketView())),
+        TabConfiguration(title: "Restaurants", systemImage: "fork.knife", tag: 3, view: AnyView(RestaurantView()))
+    ]
     
     var body: some View {
-        
-        if #available(iOS 18.0, *) {
-            TabView(selection: $selection) {
-                Tab("Home", systemImage: "house", value: 0) {
-                    HomeView()
-                }
-                
-                Tab("Mart", systemImage: "carrot.fill", value: 1) {
-                    MartView()
-                }
-                
-                Tab("Basket", systemImage: "cart", value: 2) {
-                    BasketView()
-                }
-                
-                Tab("Restaurants", systemImage: "fork.knife", value: 3) {
-                    RestaurantView()
-                }
-                
-            }
-        }else{
-            TabView(selection: $selection) {
-                HomeView()
+        TabView(selection: $selection) {
+            ForEach(tabs, id: \.tag) { tab in
+                tab.view
                     .tabItem {
-                        Image(systemName: "house")
-                        Text("Home")
-                    }.tag(0)
-                
-                MartView()
-                    .tabItem {
-                        Image(systemName: "carrot.fill")
-                        Text("Mart")
-                    }.tag(1)
-                
-                BasketView()
-                    .tabItem {
-                        Image(systemName: "cart")
-                        Text("Basket")
-                    }.tag(2)
-                
-                RestaurantView()
-                    .tabItem {
-                        Image(systemName: "fork.knife")
-                        Text("Restaurants")
-                    }.tag(3)
+                        Image(systemName: tab.systemImage)
+                        Text(tab.title)
+                    }
+                    .tag(tab.tag)
             }
         }
-        
     }
 }
 
