@@ -51,17 +51,36 @@
 			);
 			target = 3D1577402EAF53A700E9ABA3 /* MealMateWidgetExtension */;
 		};
+		3DD330C62EAFE992005C8456 /* Exceptions for "MealMate" folder in "MealMate" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 3D15772E2EAF537200E9ABA3 /* MealMate */;
+		};
+		3DE62F592EAF96640034BF6E /* Exceptions for "MealMateWidget" folder in "MealMate" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				AppIntents.swift,
+				MealMateControlWidget.swift,
+			);
+			target = 3D15772E2EAF537200E9ABA3 /* MealMate */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		3D1577312EAF537200E9ABA3 /* MealMate */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				3DD330C62EAFE992005C8456 /* Exceptions for "MealMate" folder in "MealMate" target */,
+			);
 			path = MealMate;
 			sourceTree = "<group>";
 		};
 		3D1577472EAF53A700E9ABA3 /* MealMateWidget */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
+				3DE62F592EAF96640034BF6E /* Exceptions for "MealMateWidget" folder in "MealMate" target */,
 				3D1577522EAF53A800E9ABA3 /* Exceptions for "MealMateWidget" folder in "MealMateWidgetExtension" target */,
 			);
 			path = MealMateWidget;
@@ -378,6 +397,7 @@
 				DEVELOPMENT_TEAM = 974PYRN6CZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MealMate/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -411,6 +431,7 @@
 				DEVELOPMENT_TEAM = 974PYRN6CZ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MealMate/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

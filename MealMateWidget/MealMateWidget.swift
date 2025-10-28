@@ -12,21 +12,21 @@ struct Provider: TimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
         SimpleEntry(date: Date())
     }
-
+    
     func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
         let entry = SimpleEntry(date: Date())
         completion(entry)
     }
-
+    
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         let entries:[SimpleEntry] = [SimpleEntry(date: .now)]
         let timeline = Timeline(entries: entries, policy: .atEnd)
         completion(timeline)
     }
-
-//    func relevances() async -> WidgetRelevances<Void> {
-//        // Generate a list containing the contexts this widget is relevant in.
-//    }
+    
+    //    func relevances() async -> WidgetRelevances<Void> {
+    //        // Generate a list containing the contexts this widget is relevant in.
+    //    }
 }
 
 struct SimpleEntry: TimelineEntry {
@@ -36,11 +36,11 @@ struct SimpleEntry: TimelineEntry {
 struct MealMateWidgetEntryView : View {
     @Environment(\.widgetFamily) private var family
     var entry: SimpleEntry
-
+    
     var body: some View {
         VStack {
             
-            Link(destination: URL(string: "search")!) {
+            Link(destination: URL(string: "mealmate://search")!) {
                 HStack {
                     Image(systemName: "fork.knife.circle.fill")
                         .widgetAccentable()
@@ -58,28 +58,28 @@ struct MealMateWidgetEntryView : View {
             
             switch family {
             case .systemSmall:
-                   Text("Search MealMate")
-                        .frame(maxWidth: .infinity,alignment: .leading)
-                        .font(.title3.bold())
-                        .widgetAccentable()
+                Text("Search MealMate")
+                    .frame(maxWidth: .infinity,alignment: .leading)
+                    .font(.title3.bold())
+                    .widgetAccentable()
                 
             case .systemMedium:
                 HStack {
-                    Link(destination: URL(string: "restaurants")!) {
+                    Link(destination: URL(string: "mealmate://restaurants")!) {
                         MealMateMediumCategoryView(image: "fork.knife", title: "Restaurant")
                     }
                     Spacer()
-                    Link(destination: URL(string: "mart")!) {
+                    Link(destination: URL(string: "mealmate://mart")!) {
                         MealMateMediumCategoryView(image: "birthday.cake.fill", title: "mart")
                     }
                     Spacer()
-                    Link(destination: URL(string: "baskets")!) {
+                    Link(destination: URL(string: "mealmate://cart")!) {
                         MealMateMediumCategoryView(image: "cart", title: "Basket")
                     }
-                        
+                    
                 }
-           
-            case .systemLarge,.systemExtraLarge,.systemExtraLargePortrait,.accessoryCorner, .accessoryRectangular,.accessoryInline,.accessoryCircular::
+                
+            case .systemLarge,.systemExtraLarge,.systemExtraLargePortrait,.accessoryCorner, .accessoryRectangular,.accessoryInline,.accessoryCircular:
                 EmptyView()
             default:
                 EmptyView()
@@ -88,18 +88,18 @@ struct MealMateWidgetEntryView : View {
             
         }
         .containerBackground(for: .widget) { }
-//        .widgetURL(URL(string: "coke"))
+        //        .widgetURL(URL(string: "coke"))
     }
 }
 
 struct MealMateWidget: Widget {
     let kind: String = "MealMateWidget"
-
+    
     var body: some WidgetConfiguration {
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
             if #available(iOS 17.0, *) {
                 MealMateWidgetEntryView(entry: entry)
-             } else {
+            } else {
                 MealMateWidgetEntryView(entry: entry)
                     .padding()
                     .background()
@@ -124,10 +124,10 @@ struct MealMateMediumCategoryView:View {
     var body: some View {
         VStack(spacing:6) {
             Image(systemName: image)
-               
+            
             Text(title)
                 .font(.caption)
-              
+            
         }
         .widgetAccentable()
         .frame(maxWidth: .infinity,maxHeight: .infinity)
