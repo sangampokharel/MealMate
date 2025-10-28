@@ -10,6 +10,11 @@
 		3D1577442EAF53A700E9ABA3 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D1577432EAF53A700E9ABA3 /* WidgetKit.framework */; };
 		3D1577462EAF53A700E9ABA3 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D1577452EAF53A700E9ABA3 /* SwiftUI.framework */; };
 		3D1577512EAF53A800E9ABA3 /* MealMateWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 3D1577412EAF53A700E9ABA3 /* MealMateWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		3DB67A222EB0937F00BE8B95 /* DataModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB67A212EB0937F00BE8B95 /* DataModels.swift */; };
+		3DB67A242EB0938200BE8B95 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB67A232EB0938200BE8B95 /* HomeView.swift */; };
+		3DB67A262EB0938200BE8B95 /* RestaurantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB67A252EB0938200BE8B95 /* RestaurantView.swift */; };
+		3DB67A282EB0938400BE8B95 /* MartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB67A272EB0938400BE8B95 /* MartView.swift */; };
+		3DB67A2A2EB0938500BE8B95 /* BasketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB67A292EB0938500BE8B95 /* BasketView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +46,11 @@
 		3D1577412EAF53A700E9ABA3 /* MealMateWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MealMateWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D1577432EAF53A700E9ABA3 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		3D1577452EAF53A700E9ABA3 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		3DB67A212EB0937F00BE8B95 /* DataModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModels.swift; sourceTree = "<group>"; };
+		3DB67A232EB0938200BE8B95 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		3DB67A252EB0938200BE8B95 /* RestaurantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantView.swift; sourceTree = "<group>"; };
+		3DB67A272EB0938400BE8B95 /* MartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MartView.swift; sourceTree = "<group>"; };
+		3DB67A292EB0938500BE8B95 /* BasketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -115,6 +125,11 @@
 				3D1577472EAF53A700E9ABA3 /* MealMateWidget */,
 				3D1577422EAF53A700E9ABA3 /* Frameworks */,
 				3D1577302EAF537200E9ABA3 /* Products */,
+				3DB67A212EB0937F00BE8B95 /* DataModels.swift */,
+				3DB67A232EB0938200BE8B95 /* HomeView.swift */,
+				3DB67A252EB0938200BE8B95 /* RestaurantView.swift */,
+				3DB67A272EB0938400BE8B95 /* MartView.swift */,
+				3DB67A292EB0938500BE8B95 /* BasketView.swift */,
 			);
 			sourceTree = "<group>";
 		};
@@ -245,6 +260,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DB67A282EB0938400BE8B95 /* MartView.swift in Sources */,
+				3DB67A222EB0937F00BE8B95 /* DataModels.swift in Sources */,
+				3DB67A2A2EB0938500BE8B95 /* BasketView.swift in Sources */,
+				3DB67A262EB0938200BE8B95 /* RestaurantView.swift in Sources */,
+				3DB67A242EB0938200BE8B95 /* HomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

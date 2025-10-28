@@ -16,43 +16,43 @@ struct MainView: View {
         if #available(iOS 18.0, *) {
             TabView(selection: $selection) {
                 Tab("Home", systemImage: "house", value: 0) {
-                    Text("Home")
+                    HomeView()
                 }
                 
                 Tab("Mart", systemImage: "carrot.fill", value: 1) {
-                    Text("Mart")
+                    MartView()
                 }
                 
                 Tab("Basket", systemImage: "cart", value: 2) {
-                    Text("Baskets")
+                    BasketView()
                 }
                 
                 Tab("Restaurants", systemImage: "fork.knife", value: 3) {
-                    Text("Restaurants")
+                    RestaurantView()
                 }
                 
             }
         }else{
             TabView(selection: $selection) {
-                Text("Home")
+                HomeView()
                     .tabItem {
                         Image(systemName: "house")
                         Text("Home")
                     }.tag(0)
                 
-                Text("Mart")
+                MartView()
                     .tabItem {
                         Image(systemName: "carrot.fill")
                         Text("Mart")
                     }.tag(1)
                 
-                Text("Baskets")
+                BasketView()
                     .tabItem {
                         Image(systemName: "cart")
-                        Text("Baskets")
+                        Text("Basket")
                     }.tag(2)
                 
-                Text("Restaurants")
+                RestaurantView()
                     .tabItem {
                         Image(systemName: "fork.knife")
                         Text("Restaurants")
