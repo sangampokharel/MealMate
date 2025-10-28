@@ -4,6 +4,9 @@ MealMate is an iOS application that combines food delivery and grocery shopping 
 
 This project is done to learn about widgets, control widgets and deeplinking into application
 
+#Video Demo
+https://drive.google.com/file/d/1CJUYtZ4E3be2Xwk-JKa6ZLFDIoh7Rcue/view?t=12
+
 #ScreenShots of Widgets implementation 
 
 <div style="display: flex; justify-content: center; gap: 20px;">
